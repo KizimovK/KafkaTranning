@@ -22,7 +22,7 @@ public class OrderService {
 
     public void sendKafkaTopic(OrderEvent orderEvent) {
         UUID key  = UUID.randomUUID();
-        log.info("Send in topic order-event {}", orderEvent);
+        log.info("Send message in {}: {}", topicSend, orderEvent);
         kafkaTemplate.send(topicSend, key, orderEvent);
     }
 

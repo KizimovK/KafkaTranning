@@ -3,6 +3,6 @@ spring:
     bootstrap-servers: localhost:29092
 app:
   kafka:
-    kafkaTopicReceive: "order-status-event-topic"
-    kafkaTopicSend: "order-event-topic"
+    kafkaTopicReceive: "order-status-topic"
+    kafkaTopicSend: "order-topic"
     kafkaGroupId: 1

@@ -4,6 +4,6 @@ spring:
 
 app:
   kafka:
-    kafkaTopicReceive: "order-event-topic"
-    kafkaTopicSend: "order-status-event-topic"
+    kafkaTopicReceive: "order-topic"
+    kafkaTopicSend: "order-status-topic"
     kafkaGroupId: 1

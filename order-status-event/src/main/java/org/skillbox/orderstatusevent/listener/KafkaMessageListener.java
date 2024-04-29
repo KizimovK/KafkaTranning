@@ -29,7 +29,7 @@ public class KafkaMessageListener {
                          @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
                          @Header(KafkaHeaders.RECEIVED_PARTITION) Integer partition,
                          @Header(KafkaHeaders.RECEIVED_TIMESTAMP) Long timestamp){
-        log.info("Received order-status-topic: {}", orderEvent);
+        log.info("Received message order-topic: {}", orderEvent);
         log.info("Key: {}; Partition: {}; Topic: {}; Timestamp: {}", key, partition, topic, timestamp);
         orderStatusEventService.send(key);
     }

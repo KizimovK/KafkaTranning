@@ -2,7 +2,6 @@ package org.skillbox.orderstatusevent.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.skillbox.event.OrderEvent;
 import org.skillbox.event.OrderStatus;
 import org.skillbox.event.OrderStatusEvent;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,7 +26,7 @@ public class OrderStatusEventService {
         OrderStatusEvent orderStatusEvent = new OrderStatusEvent();
         orderStatusEvent.setOrderStatus(OrderStatus.CREATED);
         orderStatusEvent.setDate(Instant.now());
-        log.info("Send in topic order-status-event {}", orderStatusEvent);
+        log.info("Send message in topic {}: {}", topicSend, orderStatusEvent);
         kafkaTemplate.send(topicSend, key, orderStatusEvent);
     }
 }
